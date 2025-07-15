@@ -1,0 +1,216 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="figuras coleccionables geek, productos Marvel y DC, merchandising Star Wars, colección Funko Pop, tienda geek en línea" />
+  <title>Geekerath</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    .encabezado {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      width: 150px;
+      height: auto;
+    }
+
+    nav {
+      width: 100%;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #f1c40f;
+    }
+
+    .avatar-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .avatar-container video {
+      width: 250px;
+      height: auto;
+    }
+
+    #carrito {
+      background-color: #fff;
+      padding: 20px;
+      margin: 30px auto;
+      border-radius: 10px;
+      max-width: 600px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    #carrito ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      color: #666;
+      cursor: not-allowed;
+    }
+
+    .producto-item {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-width: 300px;
+      margin: 10px;
+      text-align: center;
+    }
+
+    .grilla {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .formulario form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    footer.pie {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      color: #fff;
+    }
+
+    .redes img {
+      width: 30px;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="encabezado">
+    <img src="logo.jpg" alt="Logotipo Geekerath" class="logo" />
+    <nav>
+      <a href="#productos">Destacados</a>
+      <a href="#" onclick="mostrarCategoria('Marvel')">Marvel</a>
+      <a href="#" onclick="mostrarCategoria('DC Comics')">DC Comics</a>
+      <a href="#" onclick="mostrarCategoria('Star Wars')">Star Wars</a>
+      <a href="#" onclick="mostrarCategoria('Mercancia')">Mercancia</a>
+      <a href="#" onclick="mostrarCategoria('todos')">Ver Todo</a>
+    </nav>
+  </header>
+
+  <div class="avatar-container">
+    <video autoplay loop playsinline controls>S
+      <source src="Avatar IV Video.mp4" type="video/mp4">
+      Tu navegador no soporta la etiqueta de video.
+    </video>
+  </div>
+
+ <section class="hero" data-aos="zoom-in">
+  <h2>¡Empieza tu recorrido!</h2>
+  <p>Ofertas de hasta 50% de descuento</p>
+  <button onclick="verOfertas()">Explorar Ofertas</button>
+</section>
+<section class="unboxing" data-aos="fade-up">
+  <h2>🎁 Mira nuestro Unboxing</h2>
+  <div class="video-wrapper">
+    <video controls autoplay muted loop>
+      <source src="funko pop  SUPERMAN.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de video.
+    </video>
+  </div>
+</section>
+
+
+  <section id="productos">
+    <h2>Los Más Vendidos</h2>
+    <div class="grilla">
+      <div class="producto">
+        <img src="Lego eternals.jpg" alt="LEGO Arishem">
+        <p><strong>LEGO Arishem</strong><br>$1,990.00</p>
+      </div>
+      <div class="producto">
+        <img src="X-MEN.jpg" alt="X-Men vs Sentinel">
+        <p><strong>X-Men vs Sentinel</strong><br>$58,000.00</p>
+      </div>
+      <div class="producto">
+        <img src="Spiderman Mafex.jpg" alt="Spiderman Mafex">
+        <p><strong>Spiderman Mafex</strong><br>$5,400.00</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalogo-filtrado">
+    <h2>Catálogo por Categoría</h2>
+    <div id="lista-productos" class="grilla"></div>
+  </section>
+
+  <section id="carrito">
+    <h2>🛒 Tu Carrito</h2>
+    <ul id="items-carrito"></ul>
+    <p id="total-carrito">Total: $0.00</p>
+  </section>
+   <section id="ir-checkout">
+    <button onclick="window.location.href='checkout.html'">Finalizar Compra</button>
+  </section>
+
+  <section class="formulario" id="contacto">
+    <h2 data-aos="fade-right">¿Tienes dudas? Contáctanos</h2>
+    <form onsubmit="enviarMensaje(event)">
+      <input type="text" placeholder="Tu nombre" required />
+      <input type="email" placeholder="Correo electrónico" required />
+      <textarea placeholder="Escribe tu mensaje aquí..." required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer class="pie">
+    <p>&copy; 2025 Geekerath - Todos los derechos reservados</p>
+    <div class="redes">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" /></a>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modalProducto" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 9999;">
+    <div style="background: white; padding: 20px; max-width: 400px; border-radius: 10px; text-align: center;">
+      <img id="modalImagen" src="" alt="" style="width: 100%; border-radius: 10px;">
+      <h3 id="modalNombre"></h3>
+      <p id="modalDescripcion"></p>
+      <p id="modalPrecio"></p>
+      <p id="modalStock"></p>
+      <button id="btnAgregarCarrito">Agregar al carrito</button>
+      <br><br>
+      <button onclick="cerrarModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <section id="ir-checkout">
+    <button onclick="window.location.href='checkout.html'">Finalizar Compra</button>
+  </section>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</html>
+

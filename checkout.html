@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - Geekerath</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header, footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      color: #fff;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background-color: #f1c40f;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .volver {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .volver a {
+      color: #000;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Geekerath - Finaliza tu compra</h1>
+  </header>
+  <!-- Secciones nuevas -->
+  <section id="quienes-somos">
+    <h2>¿Quiénes Somos?</h2>
+    <p><strong>Misión:</strong>Conectar a los fans de la cultura geek en un espacio creativo y lleno de referencias con las que se identifiquen.</p>
+    <p><strong>Visión:</strong>Ser la marca referente de estilo geek, tanto en contenido como en productos, promoviendo orgullo por lo friki.</p>
+    <p><strong>Valores:</strong>  Pasión, creatividad, comunidad, diversidad y autenticidad..</p>
+  </section>
+
+  <section id="nosotros">
+    <h2>Nuestra Historia</h2>
+    <p><em>“La idea de Geekerath nació de una pasión genuina por el universo geek....”</em></p>
+    <p>Por la necesidad de crear un espacio auténtico, donde cada friki pueda sentirse orgullosamente representado. Así nació Geekerath: una marca hecha por geeks, para geeks..</p>
+    <img src="foto.jpg" alt="Foto de los fundadores" style="width: 100%; max-width: 400px; border-radius: 10px; display:block; margin: 20px auto;" />
+  </section>
+
+  <section id="reseñas">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <blockquote>
+      "Todos sus productos son de excelente calidad y excelentes precios." — <strong>Karla G.</strong>
+    </blockquote>
+  </section>
+
+  <section id="faq">
+    <h2>Preguntas Frecuentes</h2>
+    <h4>¿Cuánto tarda en llegar?</h4>
+    <p>Entregas en 1 dia o una semana dependiendo tu ubicacion.</p>
+    <h4>¿Puedo pedir cuantas figuras quiera?</h4>
+    <p>Sí, puedes combinar todas las franquicias que quieras.</p>
+  </section>
+
+
+
+  <div class="container">
+    <h2>Datos para tu pedido</h2>
+    <form onsubmit="event.preventDefault(); alert('¡Gracias por tu compra!');">
+      <input type="text" placeholder="Nombre completo" required />
+      <input type="email" placeholder="Correo electrónico" required />
+      <input type="text" placeholder="Dirección de entrega" required />
+      <textarea placeholder="Notas del pedido (opcional)"></textarea>
+      <button type="submit">Confirmar Pedido</button>
+    </form>
+
+    <div class="volver">
+      <p><a href="index.html">← Volver a la tienda</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Geekerath - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
+    
